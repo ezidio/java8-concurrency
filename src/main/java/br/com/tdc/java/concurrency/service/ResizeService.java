@@ -55,8 +55,8 @@ public class ResizeService {
 
         // Usando uma DSL
         return ImageDSL.of(input)
-                .resizeTo(ImageSize.THUMBNAIL)
-                .applyFilter(ImageFilter.GRAYSCALE)
+                .resizeTo(size)
+                //.applyFilter(ImageFilter.GRAYSCALE) // Caso necessite
                 .uploadToCloud()
                 .save()
                 .returnDefaultOnError()
