@@ -1,4 +1,4 @@
-package br.com.tdc.java.concurrency;
+package br.com.tdc.java.concurrency.repository;
 
 import br.com.tdc.java.concurrency.data.ImageAddress;
 import br.com.tdc.java.concurrency.util.Simulation;
