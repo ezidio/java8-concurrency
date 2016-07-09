@@ -13,8 +13,8 @@ public class ResizeService {
     private AddressRepository addressRepository = new AddressRepository();
 
     public ImageAddress resize(ImageData input) {
-        return null;
-
+        ImageAddress uploadedAddress = imageService.uploadToCloud(input);
+        return addressRepository.save(uploadedAddress);
     }
 
 
