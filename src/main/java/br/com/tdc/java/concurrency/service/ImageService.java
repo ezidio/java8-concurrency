@@ -44,7 +44,13 @@ public class ImageService {
     }
 
     public ImageData resizeTo(ImageData image, ImageSize size) {
+        CompletableFuture<ImageData> result = new CompletableFuture<>();
+
+        if (ImageSize.THUMBNAIL.equals(size))
+            result.completeExceptionally(new NullPointerException(""));
+
         Simulation.simulate("resizing " + image + " to " + size);
+        result.complete(image);
         return new ImageData(image.getData(), size);
     }
 

@@ -1,6 +1,7 @@
 package br.com.tdc.java.concurrency.dsl;
 
 import br.com.tdc.java.concurrency.data.ImageAddress;
+import br.com.tdc.java.concurrency.data.ImageSize;
 import br.com.tdc.java.concurrency.util.Simulation;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,5 +30,9 @@ public class AddressDSL {
 
     public ImageAddress join() {
         return this.address.join();
+    }
+
+    public AddressDSL returnDefaultOnError() {
+        return new AddressDSL(address.exceptionally(ex -> new ImageAddress("error.jpg", ImageSize.ORIGINAL)));
     }
 }

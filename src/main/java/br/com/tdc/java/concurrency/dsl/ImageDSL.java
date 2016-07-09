@@ -60,4 +60,7 @@ public class ImageDSL {
         return this.image.join();
     }
 
+    public static ImageDSL of(ImageData input) {
+        return new ImageDSL(CompletableFuture.completedFuture(input));
+    }
 }
